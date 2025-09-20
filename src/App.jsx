@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback,useEffect } from "react";
 import "./App.css";
 
 const App = () => {
@@ -49,10 +49,11 @@ const App = () => {
           <input
             type="text"
             value={text}
-            readOnly
+            onChange={(e) => setText(e.target.value)}   // ✅ lets user type or delete letters
             placeholder="Generated password..."
             className="flex-1 px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-400 focus:outline-none text-gray-700"
           />
+
           <button
             onClick={copyToClipboard}
             className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition"
