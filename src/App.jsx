@@ -30,6 +30,11 @@ const App = () => {
     localStorage.setItem('password',password)
   }, [range, characters, special]);
 
+  useEffect(() => {
+    localStorage.setItem("password", text);
+  }, [text]);
+
+
   const copyToClipboard = () => {
     navigator.clipboard.writeText(text);
     alert("Copied to clipboard!");
